@@ -7,9 +7,8 @@ class TsharkExtraction:
         self.attributes = attributes_to_extract
         
     def extractInfo(self):
-        
-        
-        output = subprocess.run(['tshark -r /mnt/c/Users/drio/work/qa/ixe-68201/pcaps/NOTQLEAN_20220916_vimeo__chrome__wf02__login_upload_video_and_logout.pcapng -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], capture_output=True, text=True)
+
+        output = subprocess.run(['tshark -r %s -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], stdout=subprocess.PIPE, shell=True)
 
         for line in output:
             flow_data = line.split('=')
