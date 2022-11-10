@@ -7,8 +7,14 @@ class TsharkExtraction:
         self.attributes = attributes_to_extract
         
     def extractInfo(self):
+<<<<<<< HEAD
 
         output = subprocess.run(['tshark -r %s -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], stdout=subprocess.PIPE, shell=True)
+=======
+        
+        
+        output = subprocess.run(['tshark -r t.pcapng -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], capture_output=True, text=True)
+>>>>>>> fbb461656bf0b226ab4c1928e42e7a449e09797e
 
         for line in output:
             flow_data = line.split('=')
