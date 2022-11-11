@@ -1,20 +1,15 @@
-class TsharkExtraction:
+import subprocess
+
+
+class TSharkExtraction:
     """This class contains all required operations for extracting TCP stream/flow information using tshark"""
-    
     def __init__(self, pcap_path, attributes_to_extract):
-    """Object constructor requiring a path to a pcap/capture file."""
         self.trace = pcap_path
         self.attributes = attributes_to_extract
-        
-    def extractInfo(self):
-<<<<<<< HEAD
 
+
+    def extract_info(self):
         output = subprocess.run(['tshark -r %s -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], stdout=subprocess.PIPE, shell=True)
-=======
-        
-        
-        output = subprocess.run(['tshark -r t.pcapng -nn -e tcp.stream -e ip.src -e ip.dst -Tfields -E separator=\=\- -R ip -2'], capture_output=True, text=True)
->>>>>>> fbb461656bf0b226ab4c1928e42e7a449e09797e
 
         for line in output:
             flow_data = line.split('=')
