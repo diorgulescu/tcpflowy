@@ -1,0 +1,12 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated tcpflowy reports and artifacts
+flow_mindmap.md
+flow_chart.html
+flow_report.json
+flow_rules.rules
+*.pcap
+*.pcapng
