@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+
 # Generated tcpflowy reports and artifacts
 flow_mindmap.md
 flow_chart.html

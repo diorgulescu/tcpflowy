@@ -10,6 +10,8 @@ from include.ConsoleStyle import ConsoleStyle as C
 from include.TCPDataHoarder import TCPDataHoarder
 from include.TCPFlowObject import TCPFlowObject
 
+__version__ = "1.0.0"
+
 
 def load_cfg(cfg_path="config.ini"):
     """Loads parameters from config.ini (or a custom path provided via --custom-cfg)."""
@@ -237,6 +239,12 @@ def print_generated_rules(rules_list, rules_path):
 def main():
     parser = argparse.ArgumentParser(
         description="tcpflowy - Inspect TCP streams, identify services/IPs, filter noise, and discover DPI/IDS signatures."
+    )
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version=f"tcpflowy {__version__}",
     )
     parser.add_argument(
         "pcap",

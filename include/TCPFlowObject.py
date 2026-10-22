@@ -544,7 +544,7 @@ class TCPFlowObject:
 
             url = f"http://ip-api.com/json/{ip}?fields=status,country,countryCode,regionName,city,isp,org,as,reverse,query"
             try:
-                req = urllib.request.Request(url, headers={"User-Agent": "tcpflowy/2.0"})
+                req = urllib.request.Request(url, headers={"User-Agent": "tcpflowy/1.0.0"})
                 with urllib.request.urlopen(req, timeout=timeout) as response:
                     data = json.loads(response.read().decode("utf-8"))
                     if data.get("status") == "success":

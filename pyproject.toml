@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcpflowy"
+version = "1.0.0"
+description = "A network capture analysis and DPI/IDS signature discovery tool for isolating TCP streams, correlating DNS/TLS/HTTP metadata, and generating Suricata/Wireshark rules."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "GPL-3.0-or-later"
+authors = [
+    { name = "Dragoș Iorgulescu", email = "dragos@iorgos.net" }
+]
+keywords = ["pcap", "tshark", "wireshark", "tcp", "dpi", "ids", "suricata", "network-analysis"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Telecommunications Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/diorgulescu/tcpflowy"
+Repository = "https://github.com/diorgulescu/tcpflowy"
+Issues = "https://github.com/diorgulescu/tcpflowy/issues"
+
+[project.scripts]
+tcpflowy = "tcpflowy:main"
+
+[tool.setuptools]
+py-modules = ["tcpflowy"]
+packages = ["include"]
